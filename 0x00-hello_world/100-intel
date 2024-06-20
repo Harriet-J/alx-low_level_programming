@@ -1,2 +1,3 @@
 #!/bin/bash
-[ -z "$CFILE" ] && { echo "Error: CFILE environment variable is not set."; exit 1; } gcc -S -masm=intel "$CFILE"
+[ -z "$CFILE" ] && { echo "Error: CFILE environment variable is not set."; exit 1; } && BASENAME=$(basename "$CFILE" .c) && gcc -S -masm=intel "$CFILE" -o "${BASENAME}.s"
+
