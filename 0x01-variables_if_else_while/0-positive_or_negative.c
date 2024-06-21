@@ -1,4 +1,3 @@
-cat <<EOF > 0-positive_or_negative.c
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
@@ -24,5 +23,4 @@ int main(void)
 
     return (0);
 }
-EOF
 
