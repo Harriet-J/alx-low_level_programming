@@ -3,10 +3,9 @@
 
 #include <unistd.h>
 
-int _putchar(char c);
-
 /* Function prototypes */
-void print_numbers(void);
+void more_numbers(void);
+int _putchar(char c);
 
 #endif /* MAIN_H */
 
