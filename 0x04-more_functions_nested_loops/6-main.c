@@ -7,11 +7,10 @@
  */
 int main(void)
 {
-    print_line(0);   // Output: '\n'
-    print_line(2);   // Output: "__\n"
-    print_line(10);  // Output: "__________\n"
-    print_line(-4);  // Output: '\n'
-
+    print_line(0);
+    print_line(2);
+    print_line(10);
+    print_line(-4);
     return (0);
 }
 
