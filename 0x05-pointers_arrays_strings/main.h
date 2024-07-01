@@ -9,7 +9,8 @@ int _strlen(char *s);
 void print_rev(char *s);
 void rev_string(char *s);
 void puts_half(char *str);
-void puts2(char *str); /* Function prototype for puts2 */
+void puts2(char *str); 
+void print_array(int *a, int n);
 
 #endif /* MAIN_H */
 
