@@ -2,37 +2,35 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define PASSWORD_LENGTH 10 // Adjusted to 10 based on typical requirements
+#define SUM_MAGIC_NUMBER 2772
+
 /**
- * main - Generates random passwords for 101-crackme program
+ * main - Generate a random valid password for 101-crackme
  *
- * Return: Always 0
+ * Return: Always 0.
  */
 int main(void)
 {
-    /* Array to hold characters for password generation */
-    char password[12];
-    int i, sum, rand_char;
+    char password[PASSWORD_LENGTH + 1]; // +1 for null terminator
+    int i, sum = 0, diff;
 
-    srand(time(0));  /* Seed rand() with current time */
+    srand(time(NULL)); // Seed for random number generation based on current time
 
-    sum = 0;
-    i = 0;
-    while (sum < 2772 - 122)  /* Adjust condition for password length */
+    // Generate random characters for the password
+    for (i = 0; i < PASSWORD_LENGTH; i++)
     {
-        rand_char = rand() % 62;  /* Generate a random number between 0 and 61 */
-
-        /* Assign characters based on ASCII values */
-        if (rand_char < 26)  /* Lowercase letters */
-            password[i++] = 'a' + rand_char;
-        else if (rand_char < 52)  /* Uppercase letters */
-            password[i++] = 'A' + (rand_char - 26);
-        else  /* Digits */
-            password[i++] = '0' + (rand_char - 52);
-
-        sum += password[i - 1];
+        password[i] = rand() % 94 + 33; // ASCII range from '!' to '~'
+        sum += password[i];
     }
-    password[i] = 2772 - sum;  /* Assign last character to meet checksum */
 
+    password[PASSWORD_LENGTH] = '\0'; // Null-terminate the password string
+
+    // Adjust the last character to ensure the sum matches SUM_MAGIC_NUMBER
+    diff = SUM_MAGIC_NUMBER - sum;
+    password[PASSWORD_LENGTH - 1] = (char) diff;
+
+    // Print the generated password
     printf("%s\n", password);
 
     return (0);
