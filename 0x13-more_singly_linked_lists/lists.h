@@ -30,6 +30,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 int delete_nodeint_at_index(listint_t **head, unsigned int index);
 listint_t *add_nodeint_end(listint_t **head, const int n);  
 listint_t *add_nodeint_end(listint_t **head, const int n); /* Add this line */
+listint_t *add_nodeint_end(listint_t **head, const int n);
 
 
 #endif /* LISTS_H */
